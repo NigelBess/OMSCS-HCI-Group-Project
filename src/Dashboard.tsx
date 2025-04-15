@@ -1,4 +1,4 @@
-import { AppBar, Button, Container, CssBaseline, IconButton, Stack, Toolbar, Typography } from "@mui/material";
+import { AppBar, Button, Container, CssBaseline, Stack, Toolbar, Typography } from "@mui/material";
 import { useUser } from "./UserContext";
 import { useNavigate } from "react-router-dom";
 import PersonIcon from '@mui/icons-material/Person';

@@ -31,12 +31,14 @@ jobs:
 
       - name: Create .nojekyll file
         run: touch ./dist/.nojekyll
-
+        
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1  # Changed from v2 to v1 for better compatibility
+      # We're using the official upload-pages-artifact action which is designed 
+      # specifically for GitHub Pages deployment
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
         with:
           path: './dist'
 
@@ -51,4 +53,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1  # Changed from v2 to v1 for better compatibility
+        uses: actions/deploy-pages@v2

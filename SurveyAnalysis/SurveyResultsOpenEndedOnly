@@ -1,0 +1,21 @@
+response,Q3,Q4,Q5,Q14,Q15,Q16
+1,n/a,n/a,n/a,"i find it simple and easy to use",n/a,
+2,"Having to bring my phone and get distracted","auto detection of code across devices","Adding a fingerprint maybe","Nothing is confusing","The tone helps me locate my phone",
+3,"Sometimes its slow. Also connecting multiple devices isn't as easy or if you update to a new phone the recovery process can be complicated.","Face ID instead of passcode","Face ID instead of passcode","It's actually pretty sound. But I would say I'm an experienced user.","The interface isn't the best. Could be better and more visually appealing",
+4,"the increasing inflexibility of options to approve login","n/a","not sure","n/a","n/a",
+5,na,na,na,na,na,
+6,Expiry time,"Time it takes to expire the code should be extended","easy to use",expiry time,None,
+7,not much,"it's simple so good as is","nothing comes to mind",nothing,"I like the experience, it's simple",
+8,"Having to do it in the first place",Proximity detection,Unsure,Nothing,N/A,
+9,having to open the app,faceid,faceid,"its simple, just annoying",na,
+10,"the setup is weird, and having to re-do it every few months is also a hassle","I just prefer doing the 2FA code entering on the page that requests the 2FA, rather than my phone","enter code on webpage instead of phone","none of it is confusing","-","-"
+11,"getting the notification on my watch and laptop but not able to respond to it, so i have to go find my phone","being able to respond to the notification on various devices","remembering personal devices",annoying,no,
+12,n/a,n/a,n/a,"you can't save user preferences",n/a,n/a
+13,N/A,N/A,N/A,N/A,N/A,N/A
+14,"Just having to use my phone to enter the app","Having to be able to do 2FA using my fingerprint on the same computer","Doing 2FA with my fingerprint","When my phone notifications are off, I don't receive the banners which causes me to enter the app","I think it's pretty good",
+15,"how quickly the code changes",N/A,"I think it's currently pretty intuitive","I think its pretty straight forward",N/A,
+16,"how quick it expires sometimes. sometimes annoyed to have to pull phone out.","maybe a feature where i could say hey siri and voice enter number","maybe a feature where i could say hey siri and voice enter number","perhaps if i had to reinstall it i would have to start from scratch to learn how to redo the process","slight inconvenience sometimes otherwise no major issues","good survey. plenty opportunities to provide feedback."
+17,"Sometimes I have to use the text codes function instead of a push, for reasons unknown to me.","Not make me authenticate by sensing if I'm near my work computer.","Let one authentication last all week if they could somehow verify that it's me without making me tap a checkmark.",NA,"The push should show up no matter what",
+18,"Sometimes it does not quite work with website on Mobile.","Nothing in particular. It satisfies the needs, but just needs to work faster.","I think sometimes the handoff is not as clean as it could be when doing websites on mobile devices. Somehow it sometimes gets ""trapped."" This may not be Duo's fault, but a problem with the implementation with the school.","Nothing really.","Nothing.","Great project. It's hard to make a flow like Duo's easy given the integration steps, but a QR code could do it."
+19,"having to open the app on my phone and then enter a code","face authentication or fingerprint authentication","making it faster by not having a code or having a simple button/finger/face prompt instead","nothing is confusing, it is just a big hassle","incorporate more ways to authenticate like iphone authentication",
+20,"I don't like having to pull out my phone and remember the code between the website and my phone","I wish I could scan a qr instead of remembering","Scan qr code or maybe just scan my face or something",none,nope,

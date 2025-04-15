@@ -11,7 +11,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <UserProvider>
     <HashRouter>
-        <Routes>
+        <Routes> 
           <Route path="/" element={<App />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/dashboard" element={<Dashboard />} />

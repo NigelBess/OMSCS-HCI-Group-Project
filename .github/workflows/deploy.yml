@@ -5,9 +5,9 @@ on:
     branches:
       - master
 
-# Add this permissions block at the top level of your workflow
+# Update the permissions block
 permissions:
-  contents: read
+  contents: write  # Change from 'read' to 'write'
   pages: write
   id-token: write
 
@@ -44,8 +44,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     
-    # You can also add permissions at the job level if needed
+    # Update the job-level permissions too
     permissions:
+      contents: write  # Add this permission
       pages: write
       id-token: write
 

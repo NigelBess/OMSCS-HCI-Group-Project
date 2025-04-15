@@ -10,7 +10,7 @@ import { UserProvider } from './UserContext.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <UserProvider>
-      <BrowserRouter basename="/OMSCS-HCI-Group-Project/">
+      <BrowserRouter basename={import.meta.env.VITE_BASE_URL}>
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/auth" element={<Auth />} />

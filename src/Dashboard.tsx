@@ -10,7 +10,7 @@ function Dashboard() {
 
     return (
         <CssBaseline>
-            <AppBar position="static">
+            <AppBar position="static">  
                     <Toolbar sx={{ px: 2, display: 'flex', justifyContent: 'space-between' }}>
                         <SettingsIcon/>
                         <Stack direction="row" spacing={2} alignItems="center">

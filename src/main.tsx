@@ -10,7 +10,7 @@ import { UserProvider } from './UserContext.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <UserProvider>
-    <HashRouter> 
+    <HashRouter>  
         <Routes> 
           <Route path="/" element={<App />} />
           <Route path="/auth" element={<Auth />} />

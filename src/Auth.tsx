@@ -17,7 +17,6 @@ enum PageState
 }
 
 function Auth() {
-
     const [pageState, setPageState] = useState(PageState.Landing);
     const [code, setCode] = useState('');
     const navigate = useNavigate()
@@ -43,8 +42,6 @@ function Auth() {
                 } 
             });
             setPageState(PageState.Authenticating);
-
-            setTimeout(onCompletedAuthentication, 4500);
         } catch (err) {
             console.error("Camera permission denied:", err);
             // If permission denied, fall back to alternative method
@@ -55,6 +52,7 @@ function Auth() {
     const onCompletedAuthentication = () => {
         navigate('/dashboard');
     }
+
 
 
     const theme = createTheme({
@@ -114,7 +112,11 @@ function Auth() {
                     <Box display={pageState === PageState.Authenticating ? 'block' : 'none'}>
                         <Stack direction='column' spacing={2} alignItems='center'>  
                             <Typography>Authenticating...</Typography>    
-                            <DotLottieReact src={faceIdAnimation} autoplay={true} loop={false}></DotLottieReact>     
+                            <DotLottieReact key={pageState} src={faceIdAnimation} autoplay={true} loop={false}  dotLottieRefCallback={(dotLottie) => {
+                                if (dotLottie) {
+                                    dotLottie.addEventListener('complete', onCompletedAuthentication);
+                                }
+                            }}></DotLottieReact>     
                         </Stack>                        
                     </Box>
                     <Box display={pageState === PageState.Denied ? 'block' : 'none'}>

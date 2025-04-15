@@ -10,7 +10,7 @@ import { UserProvider } from './UserContext.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <UserProvider>
-      <BrowserRouter basename={import.meta.env.VITE_BASE_URL}>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/auth" element={<Auth />} />

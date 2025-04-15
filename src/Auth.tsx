@@ -74,6 +74,7 @@ function Auth() {
             <Box display={pageState === PageState.Landing ? 'block' : 'none'}>
                     <Slide in={pageState === PageState.Landing} direction='right'>
                         <Paper sx={{py: 4, px: 2, width: '400px', height: '500px', borderRadius: 5}}>
+                            
                             <Stack direction='column' spacing={1} alignItems='center' sx={{height: '100%', justifyContent: 'space-between'}}>
                                 <div className="paper-division">
                                     <Typography variant="h4">Duo Security</Typography>

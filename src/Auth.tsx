@@ -146,7 +146,7 @@ function Auth() {
                         </Typography>
                         <Box sx={{ bgcolor: '#f5f5f5', p: 2, borderRadius: 1, maxWidth: '400px' }}>
                             <Typography variant="body2" component="div">
-                                <strong>Chrome/Edge:</strong> Click the padlock/site settings icon in the address bar → Site settings → Reset permissions
+                                <strong>Chrome/Edge:</strong> Click the icon on the left side of the address bar → Reset camera permissions
                             </Typography>
                             <Typography variant="body2" component="div" sx={{ mt: 1 }}>
                                 <strong>Safari:</strong> Safari preferences → Websites → Camera → Find this site and change to "Allow"

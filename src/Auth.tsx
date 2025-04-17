@@ -61,7 +61,7 @@ function Auth() {
     };
 
     const onCompletedAuthentication = () => {
-        if(pageState !== PageState.Authenticating) {
+        if(pageState !== PageState.Authenticating && pageState !== PageState.Alternative) {
             return;
         }
         navigate('/dashboard');
@@ -105,7 +105,7 @@ function Auth() {
                     </Box>
                     <Box display={pageState === PageState.Alternative ? 'block' : 'none'}>
                         <Slide in={pageState === PageState.Alternative} direction='left' >
-                        <Paper sx={{py: 4, px: 2, width: '400px', height: '500px', borderRadius: 5}}>
+                        <Paper sx={{py: 4, px: 2, width: '400px', height: '600px', borderRadius: 5}}>
                             <Stack direction='column' spacing={1} alignItems='center' sx={{height: '100%', justifyContent: 'space-between'}}>
                                 <div className="paper-division">
                                     <img src={duo} alt="Duo Security" style={{width: '100px', height: '100px', marginBottom: 10, marginTop: 10}}/>                                     
@@ -114,7 +114,8 @@ function Auth() {
                                     <CircularProgress size={30}></CircularProgress>
                                 </div>
                                 <div className="paper-division">
-                                    <Typography sx={{cursor: "pointer", ":hover": {color: "#aaaaaa"}}} onClick={onCompletedAuthentication}>This page is for prototyping purposes only. Click this to pretend you entered a code in your app.</Typography>
+                                    <Typography sx={{marginBottom: 2}}>For demonstration purposes code authentication has not been implemented.</Typography>
+                                    <Typography sx={{cursor: "pointer", ":hover": {color: "#aaaaaa"}}} onClick={onCompletedAuthentication}> You can pretend you entered a code in your app by clicking on this text.</Typography>
                                     <Button sx={{mt: 2}} onClick={() => setPageState(PageState.Landing)}>Use Face Id Instead</Button>
                                 </div>
                             </Stack>                     

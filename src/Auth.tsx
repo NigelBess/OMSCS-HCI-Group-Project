@@ -60,8 +60,8 @@ function Auth() {
         }
     };
 
-    const onCompletedAuthentication = () => {
-        if(pageState !== PageState.Authenticating && pageState !== PageState.Alternative) {
+    const onCompletedAuthentication = (callingPage: PageState) => {
+        if(pageState !== callingPage) {
             return;
         }
         navigate('/dashboard');
@@ -115,7 +115,7 @@ function Auth() {
                                 </div>
                                 <div className="paper-division">
                                     <Typography sx={{marginBottom: 2}}>For demonstration purposes code authentication has not been implemented.</Typography>
-                                    <Typography sx={{cursor: "pointer", ":hover": {color: "#aaaaaa"}}} onClick={onCompletedAuthentication}> You can pretend you entered a code in your app by clicking on this text.</Typography>
+                                    <Typography sx={{cursor: "pointer", ":hover": {color: "#aaaaaa"}}} onClick={() => onCompletedAuthentication(PageState.Alternative)}> You can pretend you entered a code in your app by clicking on this text.</Typography>
                                     <Button sx={{mt: 2}} onClick={() => setPageState(PageState.Landing)}>Use Face Id Instead</Button>
                                 </div>
                             </Stack>                     
@@ -130,7 +130,7 @@ function Auth() {
                             <Typography>Authenticating...</Typography>    
                             <DotLottieReact key={pageState} src={faceIdAnimation} autoplay={true} loop={false}  dotLottieRefCallback={(dotLottie) => {
                                 if (dotLottie) {
-                                    dotLottie.addEventListener('complete', onCompletedAuthentication);
+                                    dotLottie.addEventListener('complete', () => onCompletedAuthentication(PageState.Authenticating));
                                 }
                             }}></DotLottieReact>     
                         </Stack>                        

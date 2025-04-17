@@ -5,6 +5,7 @@ import { useState } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import faceIdAnimation from './assets/faceIdAnimation.lottie';
 import { useNavigate } from "react-router-dom";
+import { VideocamOff } from "@mui/icons-material";
 
 enum PageState
 {
@@ -13,7 +14,7 @@ enum PageState
   Authenticating = 'authenticating',
   Alternative = 'alternative',
   Denied = 'denied', // TODO: implement this if user denies camera access
-  
+  NoCameraDetected = 'noCameraDetected',  
 }
 
 function Auth() {
@@ -44,12 +45,25 @@ function Auth() {
             setPageState(PageState.Authenticating);
         } catch (err) {
             console.error("Camera permission denied:", err);
-            // If permission denied, fall back to alternative method
-            setPageState(PageState.Denied);
+            if(!(err instanceof Error)) {
+                setPageState(PageState.NoCameraDetected);
+                console.error("Unknown error type in camera permission request:", err);
+                return;
+            }
+            if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
+                // User explicitly denied permission
+                setPageState(PageState.Denied);
+            } else {
+                // Other errors (like hardware errors, security errors, etc.)
+                setPageState(PageState.NoCameraDetected);
+            }
         }
     };
 
     const onCompletedAuthentication = () => {
+        if(pageState !== PageState.Authenticating) {
+            return;
+        }
         navigate('/dashboard');
     }
 
@@ -149,6 +163,24 @@ function Auth() {
                             </Button>
                         </Stack>
                     </Stack>                       
+                    </Box>
+                    <Box display={pageState === PageState.NoCameraDetected ? 'block' : 'none'}>
+                        <Stack direction='column' spacing={2} alignItems='center'>  
+                            <Stack direction='row' spacing={1} alignItems='center'>
+                                <VideocamOff sx={{fontSize: 80}} />
+                                <Typography variant="h6">No Camera Detected</Typography>
+                            </Stack>
+                            
+                            <Typography variant="body1" sx={{ maxWidth: '400px', textAlign: 'center' }}>
+                                Face ID authentication requires a camera. 
+                            </Typography>
+                            <Button variant="contained" color="primary" onClick={requestCameraPermission}>
+                                Try Again
+                            </Button>
+                            <Button color="primary" onClick={useAlternative}>
+                                Use Code Instead
+                            </Button>
+                        </Stack>                       
                     </Box>
 
             </Container>

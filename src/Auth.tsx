@@ -141,9 +141,6 @@ function Auth() {
                         <Typography>
                             You need to allow camera access to continue with Face ID authentication.
                         </Typography>
-                        <Typography variant="body2" sx={{ maxWidth: '400px', textAlign: 'center' }}>
-                            Since you denied camera access, you'll need to reset permissions in your browser settings:
-                        </Typography>
                         <Box sx={{ bgcolor: '#f5f5f5', p: 2, borderRadius: 1, maxWidth: '400px' }}>
                             <Typography variant="body2" component="div">
                                 <strong>Chrome/Edge:</strong> Click the icon on the left side of the address bar → Reset camera permissions
